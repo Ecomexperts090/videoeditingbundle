@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ultimate Video Editing Toolkit - Limited Offer</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for Inter font and custom theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#4f46e5', // Indigo-600 for main accent
+                        'secondary': '#1f2937', // Dark background
+                        'accent': '#6366f1', // Indigo-500 for subtle highlights
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'fade-in-up': {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fade-in-up 0.5s ease-out forwards',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
+        body {
+            background-color: #030712; /* Deeper background */
+            color: #f3f4f6;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Staggered animation classes */
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+        .feature-card:nth-child(5) { animation-delay: 0.5s; }
+        .feature-card:nth-child(6) { animation-delay: 0.6s; }
+        .feature-card:nth-child(7) { animation-delay: 0.7s; }
+        .feature-card:nth-child(8) { animation-delay: 0.8s; }
+
+        .animated-card {
+            opacity: 0;
+            animation: fade-in-up 0.6s ease-out forwards;
+        }
+
+        /* Custom glow for CTA button */
+        .cta-glow {
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        .cta-glow:hover {
+            box-shadow: 0 0 25px rgba(99, 102, 241, 1);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Header CTA Bar (Sticky on Mobile) -->
+    <div class="sticky top-0 z-50 bg-secondary border-b border-gray-800 p-2 text-center shadow-lg sm:hidden">
+        <a href="#checkout" class="w-full inline-block bg-primary text-white font-bold py-2 px-4 rounded-lg cta-glow">
+            Buy Now for ₹199 (Save ₹400!)
+        </a>
+    </div>
+
+    <!-- 1. Hero Section -->
+    <section class="relative overflow-hidden pt-12 pb-24 bg-secondary sm:pt-20 sm:pb-32 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <!-- Headline -->
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-tight mb-4 text-white">
+                <span class="block bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
+                    The Ultimate Video Editing Toolkit
+                </span>
+                <span class="block mt-2 text-3xl md:text-5xl text-gray-200">
+                    Edit Like a Pro. Finish in Minutes.
+                </span>
+            </h1>
+
+            <!-- Sub-headline -->
+            <p class="mt-4 max-w-3xl mx-auto text-xl text-gray-400">
+                Instantly level up your content with 1000+ premium assets—designed to make video editing fast, professional, and incredibly easy.
+            </p>
+
+            <!-- Pricing -->
+            <div class="mt-8 mb-8 flex flex-col items-center justify-center">
+                <p class="text-2xl text-gray-400">
+                    <span class="line-through mr-3">Normal Price: ₹599</span>
+                </p>
+                <p class="text-6xl md:text-8xl font-black text-primary animate-pulse">
+                    Now Only <span class="text-white">₹199</span> Today
+                </p>
+                <p class="text-sm text-yellow-400 mt-1 uppercase tracking-wider">
+                    Limited-Time Offer – 75% Instant Savings!
+                </p>
+            </div>
+
+            <!-- CTA Button -->
+            <a href="#checkout" class="inline-block py-4 px-12 text-2xl font-bold bg-primary text-white rounded-xl shadow-xl cta-glow transition duration-300 transform hover:scale-105">
+                ⚡ Download & Start Editing Now
+            </a>
+            
+            <!-- Eye-catching Visuals (Placeholder) -->
+            <div class="mt-12">
+                <div class="relative max-w-4xl mx-auto p-4 bg-gray-900/50 rounded-2xl border border-gray-700 shadow-2xl">
+                    <img src="https://placehold.co/1200x500/1e3a8a/ffffff?text=Premium+Toolkit+Preview" 
+                         alt="Toolkit Assets Mockup Preview" 
+                         class="rounded-xl shadow-lg border border-gray-700/50 transition duration-500 hover:scale-[1.01]"
+                         onerror="this.onerror=null; this.src='https://placehold.co/1200x500/1e3a8a/ffffff?text=Premium+Toolkit+Preview'">
+                    <p class="text-xs mt-3 text-gray-500">Mockup for illustrative purposes. Actual assets included.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 2. Animated Specifications / Features Section -->
+    <section class="py-16 sm:py-24 bg-[#0a0a0a] border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-12 text-white">
+                What's Inside The Box?
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Feature Card 1 -->
+                <div class="feature-card animated-card bg-gray-900 p-6 rounded-xl shadow-2xl border border-gray-700/50 hover:border-primary transition duration-300 transform hover:scale-[1.03]">
+                    <div class="text-primary text-3xl mb-3">🎬</div>
+                    <h3 class="text-xl font-bold mb-2 text-white">HD Transitions</h3>
+                    <p class="text-gray-400 text-sm">Seamlessly connect scenes with 200+ cinematic, glitch, and swipe transitions. Pure HD quality.</p>
+                </div>
+
+                <!-- Feature Card 2 -->
+                <div class="feature-card animated-card bg-gray-900 p-6 rounded-xl shadow-2xl border border-gray-700/50 hover:border-primary transition duration-300 transform hover:scale-[1.03]">
+                    <div class="text-primary text-3xl mb-3">🎨</div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Premium LUTs (Color Grades)</h3>
+                    <p class="text-gray-400 text-sm">Instantly apply professional color grading. Get the 'Hollywood look' with one click. (50+ included).</p>
+                </div>
+
+                <!-- Feature Card 3 -->
+                <div class="feature-card animated-card bg-gray-900 p-6 rounded-xl shadow-2xl border border-gray-700/50 hover:border-primary transition duration-300 transform hover:scale-[1.03]">
+                    <div class="text-primary text-3xl mb-3">🔊</div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Sound Effects Pack</h3>
+                    <p class="text-gray-400 text-sm">Enhance impact with whooshes, clicks, cinematic hits, and background ambiences. (150+ sounds).</p>
+                </div>
+
+                <!-- Feature Card 4 -->
+                <div class="feature-card animated-card bg-gray-900 p-6 rounded-xl shadow-2xl border border-gray-700/50 hover:border-primary transition duration-300 transform hover:scale-[1.03]">
+                    <div class="text-primary text-3xl mb-3">✨</div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Animated Titles & Graphics</h3>
+                    <p class="text-gray-400 text-sm">Engage your audience with sleek, dynamic motion graphics and lower-thirds titles.</p>
+                </div>
+
+                <!-- Feature Card 5 -->
+                <div class="feature-card animated-card bg-gray-900 p-6 rounded-xl shadow-2xl border border-gray-700/50 hover:border-primary transition duration-300 transform hover:scale-[1.03]">
+                    <div class="text-primary text-3xl mb-3">📱</div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Social Media Templates</h3>
+                    <p class="text-gray-400 text-sm">Ready-to-use templates optimized for Reels, Shorts, and TikTok. Boost engagement fast.</p>
+                </div>
+
+                <!-- Feature Card 6 -->
+                <div class="feature-card animated-card bg-gray-900 p-6 rounded-xl shadow-2xl border border-gray-700/50 hover:border-primary transition duration-300 transform hover:scale-[1.03]">
+                    <div class="text-primary text-3xl mb-3">📦</div>
+                    <h3 class="text-xl font-bold mb-2 text-white">1000+ Total Video Assets</h3>
+                    <p class="text-gray-400 text-sm">Over a thousand assets, elements, overlays, and stock footage clips to fill out your videos.</p>
+                </div>
+                
+                <!-- Feature Card 7 (Compatibility) -->
+                <div class="feature-card animated-card bg-gray-900 p-6 rounded-xl shadow-2xl border border-gray-700/50 hover:border-primary transition duration-300 transform hover:scale-[1.03]">
+                    <div class="text-primary text-3xl mb-3">💻</div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Works with All Software</h3>
+                    <p class="text-gray-400 text-sm">Compatible with Premiere Pro, FCPX, DaVinci Resolve, CapCut, and more. No complex setup.</p>
+                </div>
+                
+                <!-- Feature Card 8 (Ease of Use) -->
+                <div class="feature-card animated-card bg-gray-900 p-6 rounded-xl shadow-2xl border border-gray-700/50 hover:border-primary transition duration-300 transform hover:scale-[1.03]">
+                    <div class="text-primary text-3xl mb-3">🔌</div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Easy Plug-and-Play</h3>
+                    <p class="text-gray-400 text-sm">Drag, drop, and done. Designed for instant use even if you're a beginner editor.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. “What You Get” Section -->
+    <section class="py-16 sm:py-24 bg-secondary border-b border-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-12 text-white">
+                Detailed Toolkit Content Breakdown
+            </h2>
+
+            <div class="bg-gray-900 p-8 sm:p-12 rounded-2xl shadow-3xl border border-gray-700">
+                <ul class="space-y-6 text-lg">
+                    <li class="flex items-start">
+                        <span class="text-primary mr-3 mt-1 flex-shrink-0">✅</span>
+                        <p class="text-white">
+                            **200+ HD Video Transitions (.mov, .mp4):** Glitch, cinematic, geometric, and zoom transitions for every project style.
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-primary mr-3 mt-1 flex-shrink-0">✅</span>
+                        <p class="text-white">
+                            **50 Premium LUTs (.cube):** Professionally graded color presets (Filmic, Moody, Summer Glow, Cyberpunk).
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-primary mr-3 mt-1 flex-shrink-0">✅</span>
+                        <p class="text-white">
+                            **150+ Cinematic Sound Effects (.wav):** Risers, whooshes, impacts, and subtle ambient sounds for high production value.
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-primary mr-3 mt-1 flex-shrink-0">✅</span>
+                        <p class="text-white">
+                            **100+ Animated Titles & Lower Thirds:** Fully customizable, ready-to-drag motion graphics templates.
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-primary mr-3 mt-1 flex-shrink-0">✅</span>
+                        <p class="text-white">
+                            **Social Media Pack:** 50 unique video templates and overlays designed specifically for vertical video platforms.
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-primary mr-3 mt-1 flex-shrink-0">✅</span>
+                        <p class="text-white">
+                            **Bonus: 500+ Stock Video Elements:** Overlays, light leaks, film grain, and VFX assets to add texture to your videos.
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-primary mr-3 mt-1 flex-shrink-0">✅</span>
+                        <p class="text-white">
+                            **Lifetime Access & Free Updates:** Pay once and get all future additions to the toolkit at no extra cost.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Benefits Section -->
+    <section class="py-16 sm:py-24 bg-[#0a0a0a] border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-16 text-white">
+                Stop Editing. Start Creating.
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                
+                <!-- Benefit 1: Edit Faster -->
+                <div class="text-center p-6 bg-gray-900 rounded-xl shadow-xl border-t-4 border-primary hover:bg-gray-800/80 transition duration-300">
+                    <div class="text-4xl text-primary mb-3">⏱️</div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Edit 10x Faster</h3>
+                    <p class="text-gray-400 text-sm">Cut editing time by 80%. Stop searching for assets and start dropping them in instantly.</p>
+                </div>
+
+                <!-- Benefit 2: Professional Videos -->
+                <div class="text-center p-6 bg-gray-900 rounded-xl shadow-xl border-t-4 border-primary hover:bg-gray-800/80 transition duration-300">
+                    <div class="text-4xl text-primary mb-3">⭐</div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Cinematic Quality</h3>
+                    <p class="text-gray-400 text-sm">Achieve the polished, high-end look of top-tier creators without paying for custom work.</p>
+                </div>
+
+                <!-- Benefit 3: Save Money -->
+                <div class="text-center p-6 bg-gray-900 rounded-xl shadow-xl border-t-4 border-primary hover:bg-gray-800/80 transition duration-300">
+                    <div class="text-4xl text-primary mb-3">💰</div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Save Thousands</h3>
+                    <p class="text-gray-400 text-sm">No need to hire freelancers or subscribe to multiple expensive stock asset sites.</p>
+                </div>
+                
+                <!-- Benefit 4: Grow Social Media -->
+                <div class="text-center p-6 bg-gray-900 rounded-xl shadow-xl border-t-4 border-primary hover:bg-gray-800/80 transition duration-300">
+                    <div class="text-4xl text-primary mb-3">📈</div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Boost Social Growth</h3>
+                    <p class="text-gray-400 text-sm">High-quality content drives higher retention, leading to more views and subscribers.</p>
+                </div>
+
+                <!-- Benefit 5: Improve Content Quality -->
+                <div class="text-center p-6 bg-gray-900 rounded-xl shadow-xl border-t-4 border-primary hover:bg-gray-800/80 transition duration-300">
+                    <div class="text-4xl text-primary mb-3">💡</div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Unlimited Creativity</h3>
+                    <p class="text-gray-400 text-sm">Focus on your story, not technical hurdles. Use the toolkit to realize any vision.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Offer Section / Urgency Bar -->
+    <section id="offer" class="py-12 bg-primary/20 border-t border-b border-primary/50 text-center">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-extrabold text-white mb-3">
+                Grab This Unbeatable Deal Before It's Gone
+            </h2>
+            <p class="text-2xl text-gray-200">
+                <span class="line-through mr-4">Normal Price: ₹599</span>
+                <span class="font-black text-yellow-400">Today Only: ₹199</span>
+            </p>
+            <p class="text-lg mt-2 text-red-400 font-semibold uppercase animate-pulse">
+                ⏰ Limited-Time Deal – Discount Expires Soon!
+            </p>
+        </div>
+    </section>
+    
+    <!-- 6. Trust Section (Testimonials & Badges) -->
+    <section class="py-16 sm:py-24 bg-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-16 text-white">
+                Trusted by Creators Across India
+            </h2>
+
+            <!-- Testimonials Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-900 p-6 rounded-xl shadow-2xl border border-gray-700">
+                    <p class="italic text-gray-300">"This toolkit saved my YouTube channel. The transitions are flawless, and the LUTs instantly made my footage look professional. Unbelievable value for ₹199."</p>
+                    <div class="mt-4 pt-4 border-t border-gray-700">
+                        <p class="font-semibold text-primary">Anjali V.</p>
+                        <p class="text-sm text-gray-500">Filmmaker & YouTuber</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-900 p-6 rounded-xl shadow-2xl border border-gray-700">
+                    <p class="italic text-gray-300">"I used to spend hours sourcing sound effects. Now everything is in one pack. My editing speed has doubled, and my clients are loving the final results."</p>
+                    <div class="mt-4 pt-4 border-t border-gray-700">
+                        <p class="font-semibold text-primary">Karthik S.</p>
+                        <p class="text-sm text-gray-500">Freelance Video Editor</p>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-900 p-6 rounded-xl shadow-2xl border border-gray-700">
+                    <p class="italic text-gray-300">"The social media templates alone are worth the price. I can create a high-quality Reel in 5 minutes flat. A must-have for anyone serious about content."</p>
+                    <div class="mt-4 pt-4 border-t border-gray-700">
+                        <p class="font-semibold text-primary">Priya R.</p>
+                        <p class="text-sm text-gray-500">Social Media Manager</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Trust Badges -->
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-6 sm:space-y-0 sm:space-x-12">
+                
+                <!-- Money-Back Guarantee -->
+                <div class="flex items-center space-x-3 p-4 bg-gray-900 rounded-xl shadow-inner border border-green-500/50">
+                    <span class="text-green-400 text-3xl">🛡️</span>
+                    <p class="text-white font-semibold">30-Day Money Back Guarantee</p>
+                </div>
+                
+                <!-- Secure Checkout -->
+                <div class="flex items-center space-x-3 p-4 bg-gray-900 rounded-xl shadow-inner border border-yellow-500/50">
+                    <span class="text-yellow-400 text-3xl">🔒</span>
+                    <p class="text-white font-semibold">100% Secure Checkout</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Button Section -->
+    <section id="checkout" class="py-12 bg-primary text-center">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold text-white mb-4">
+                Claim Your Ultimate Video Editing Toolkit Now!
+            </h2>
+            <p class="text-xl text-primary-200 mb-6">
+                <span class="font-bold">Last Chance:</span> Get 75% OFF today and transform your videos instantly.
+            </p>
+            
+            <a href="#" class="inline-block py-5 px-16 text-3xl font-black bg-white text-primary rounded-xl shadow-2xl cta-glow transition duration-300 transform hover:scale-105">
+                YES! I Want the Toolkit for ₹199
+            </a>
+            <p class="text-sm text-white/80 mt-3">One-time payment. Instant Digital Download.</p>
+        </div>
+    </section>
+
+    <!-- 7. Footer -->
+    <footer class="bg-secondary/50 border-t border-gray-800 p-8 text-center text-gray-500 text-sm">
+        <p>&copy; 2024 Video Editing Toolkit. All rights reserved.</p>
+        <p class="mt-2">Support: <a href="mailto:support@protoolkit.com" class="text-primary hover:underline">support@protoolkit.com</a></p>
+        <p class="mt-1">
+            <a href="#" class="hover:underline">Terms of Service</a> | 
+            <a href="#" class="hover:underline">Privacy Policy</a>
+        </p>
+    </footer>
+
+    <!-- JavaScript for Staggered Animation (for initial load only) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Find all feature cards
+            const cards = document.querySelectorAll('.feature-card');
+
+            // Set a threshold for when the cards should appear
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Apply the animation class when the element comes into view
+                        entry.target.classList.add('animated-card');
+                        observer.unobserve(entry.target); // Stop observing after animation
+                    }
+                });
+            }, {
+                rootMargin: '0px',
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            });
+
+            // Start observing each card
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
